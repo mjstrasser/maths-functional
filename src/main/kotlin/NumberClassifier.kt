@@ -1,6 +1,5 @@
 package mjs.maths
 
-import arrow.core.Eval
 import kotlin.math.sqrt
 
 fun Int.factors(): List<Int> =
@@ -10,9 +9,7 @@ fun Int.factors(): List<Int> =
         .distinct()
         .sorted()
 
-fun Int.aliquotSum(): Int = Eval.later {
-    this.factors().sum() - this
-}.value()
+fun Int.aliquotSum(): Int = this.factors().sum() - this
 
 fun Int.isPerfect(): Boolean = this.aliquotSum() == this
 
