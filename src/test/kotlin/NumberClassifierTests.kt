@@ -26,4 +26,21 @@ class NumberClassifierTests : DescribeSpec({
         }
     }
 
+    describe("Aliquot sum") {
+        it("is 0 for 1") {
+            aliquotSum(1) shouldBe 0
+        }
+        it("is 1 for 2") {
+            aliquotSum(2) shouldBe 1
+        }
+        it("is correct for the first 50 values") {
+            // From https://en.wikipedia.org/wiki/Aliquot_sum
+            listOf(0, 1, 1, 3, 1, 6, 1, 7, 4, 8,
+                1, 16, 1, 10, 9, 15, 1, 21, 1, 22,
+                11, 14, 1, 36, 6, 16, 13, 28, 1, 42,
+                1, 31, 15, 20, 13, 55, 1, 22, 17, 50,
+                1, 54, 1, 40, 33, 26, 1, 76, 8, 43).forEachIndexed { idx, sum -> aliquotSum(idx + 1) shouldBe sum }
+        }
+    }
+
 })

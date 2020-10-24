@@ -8,3 +8,6 @@ fun factorsOf(number: Int): List<Int> =
         .run { this + this.map { number / it } }
         .distinct()
         .sorted()
+
+fun aliquotSum(number: Int): Int =
+    factorsOf(number).sum() - number
