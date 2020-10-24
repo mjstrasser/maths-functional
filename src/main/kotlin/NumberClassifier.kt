@@ -1,5 +1,6 @@
 package mjs.maths
 
+import arrow.core.Eval
 import kotlin.math.sqrt
 
 fun factorsOf(number: Int): List<Int> =
@@ -9,5 +10,6 @@ fun factorsOf(number: Int): List<Int> =
         .distinct()
         .sorted()
 
-fun aliquotSum(number: Int): Int =
+fun aliquotSum(number: Int): Int = Eval.later {
     factorsOf(number).sum() - number
+}.value()
