@@ -13,3 +13,9 @@ fun Int.factors(): List<Int> =
 fun Int.aliquotSum(): Int = Eval.later {
     this.factors().sum() - this
 }.value()
+
+fun Int.isPerfect(): Boolean = this.aliquotSum() == this
+
+fun Int.isDeficient(): Boolean = this.aliquotSum() < this
+
+fun Int.isAbundant(): Boolean = this.aliquotSum() > this
