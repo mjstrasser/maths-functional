@@ -7,22 +7,22 @@ class NumberClassifierTests : DescribeSpec({
 
     describe("calculating factors") {
         it("are only 1 for 1") {
-            1.factors() shouldBe listOf(1)
+            1.factors() shouldBe setOf(1)
         }
         it("are 1 and 2 for 2") {
-            2.factors() shouldBe listOf(1, 2)
+            2.factors() shouldBe setOf(1, 2)
         }
         it("are 1 and 3 for 3") {
-            3.factors() shouldBe listOf(1, 3)
+            3.factors() shouldBe setOf(1, 3)
         }
         it("are 1, 2 and 4 for 4") {
-            4.factors() shouldBe listOf(1, 2, 4)
+            4.factors() shouldBe setOf(1, 2, 4)
         }
         it("are 1, 2, 3, 4, 6 and 12 for 12") {
-            12.factors() shouldBe listOf(1, 2, 3, 4, 6, 12)
+            12.factors() shouldBe setOf(1, 2, 3, 4, 6, 12)
         }
         it("are only 1 and 13 for 13") {
-            13.factors() shouldBe listOf(1, 13)
+            13.factors() shouldBe setOf(1, 13)
         }
     }
 
@@ -63,7 +63,7 @@ class NumberClassifierTests : DescribeSpec({
         }
         it("is evaluated correctly for the first 20 values") {
             // From https://en.wikipedia.org/wiki/Deficient_number
-            listOf(1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 21, 22, 23, 25)
+            setOf(1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 21, 22, 23, 25)
                 .forEach { value -> value.isDeficient() shouldBe true }
         }
     }
@@ -74,7 +74,7 @@ class NumberClassifierTests : DescribeSpec({
         }
         it("is evaluated correctly for the first 20 values") {
             // From https://en.wikipedia.org/wiki/Abundant_number
-            listOf(12, 18, 20, 24, 30, 36, 40, 42, 48, 54, 56, 60, 66, 70, 72, 78, 80, 84, 88, 90)
+            setOf(12, 18, 20, 24, 30, 36, 40, 42, 48, 54, 56, 60, 66, 70, 72, 78, 80, 84, 88, 90)
                 .forEach { value -> value.isAbundant() shouldBe true }
         }
     }
