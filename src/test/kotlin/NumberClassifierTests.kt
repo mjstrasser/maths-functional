@@ -64,7 +64,7 @@ class NumberClassifierTests : DescribeSpec({
         it("is evaluated correctly for the first 20 values") {
             // From https://en.wikipedia.org/wiki/Deficient_number
             setOf(1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 19, 21, 22, 23, 25)
-                .forEach { value -> value.isDeficient() shouldBe true }
+                .forEach { int -> int.isDeficient() shouldBe true }
         }
     }
 
@@ -75,7 +75,7 @@ class NumberClassifierTests : DescribeSpec({
         it("is evaluated correctly for the first 20 values") {
             // From https://en.wikipedia.org/wiki/Abundant_number
             setOf(12, 18, 20, 24, 30, 36, 40, 42, 48, 54, 56, 60, 66, 70, 72, 78, 80, 84, 88, 90)
-                .forEach { value -> value.isAbundant() shouldBe true }
+                .forEach { int -> int.isAbundant() shouldBe true }
         }
     }
 
